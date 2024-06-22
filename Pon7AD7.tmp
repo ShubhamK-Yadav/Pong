@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cr5ntgwlwqfum"]
+
+[ext_resource type="Script" path="res://Pong.gd" id="1_agf3n"]
+[ext_resource type="Script" path="res://Player1.gd" id="2_djo6j"]
+[ext_resource type="Script" path="res://Player2.gd" id="3_imlkr"]
+
+[node name="Pong" type="Node2D"]
+position = Vector2(-1, 2)
+script = ExtResource("1_agf3n")
+
+[node name="Player1" type="Node2D" parent="."]
+script = ExtResource("2_djo6j")
+
+[node name="Player2" type="Node2D" parent="."]
+script = ExtResource("3_imlkr")
