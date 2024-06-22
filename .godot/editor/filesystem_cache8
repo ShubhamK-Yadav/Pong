@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1719064258
+icon.svg::CompressedTexture2D::1325700003115213273::1718031716::1718031735::1::::<><>::
+Player1.gd::GDScript::-1::1718894865::0::1::::<>StaticBody2D<>::
+Player2.gd::GDScript::-1::1718894865::0::1::::<>StaticBody2D<>::
+Pong.gd::GDScript::-1::1719004884::0::1::::<>Node2D<>::
+Pong.tscn::PackedScene::6028806642500325384::1719008612::0::1::::<><>::res://Pong.gd<>res://Player1.gd<>res://Player2.gd
+::res://ball/::1719007952
+Ball.gd::GDScript::-1::1719004745::0::1::::<>RigidBody2D<>::
+ball.tscn::PackedScene::2917453565813342830::1719007952::0::1::::<><>::res://ball/Ball.gd
