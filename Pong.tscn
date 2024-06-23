@@ -4,6 +4,9 @@
 [ext_resource type="Script" path="res://Player1.gd" id="2_djo6j"]
 [ext_resource type="Script" path="res://Player2.gd" id="3_imlkr"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_wejw1"]
+font_size = 36
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2fu26"]
 
 [sub_resource type="Gradient" id="Gradient_2qe13"]
@@ -40,12 +43,6 @@ bounce = 1.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7dan"]
 size = Vector2(13, 113)
 
-[sub_resource type="Curve2D" id="Curve2D_cm2cc"]
-_data = {
-"points": PackedVector2Array(0, 0, 80, 0, 106, -101, 40, 0, 50, 0, 218, -73, 0, 0, 0, 0, 109, -33, 0, 0, 0, 0, 106, -101)
-}
-point_count = 4
-
 [node name="Pong" type="Node2D"]
 position = Vector2(-1, 2)
 script = ExtResource("1_agf3n")
@@ -56,12 +53,25 @@ offset_right = 1123.0
 offset_bottom = 651.0
 color = Color(0, 0, 0, 1)
 
-[node name="Separator" type="Line2D" parent="."]
-modulate = Color(0, 0.32549, 0.443137, 1)
-self_modulate = Color(0.47451, 1, 1, 1)
-material = SubResource("CanvasItemMaterial_2fu26")
-points = PackedVector2Array(559, -12, 559, 283.432, 559, 659)
-gradient = SubResource("Gradient_2qe13")
+[node name="Player 1 Score" type="Label" parent="."]
+offset_left = 218.0
+offset_top = -3.0
+offset_right = 247.0
+offset_bottom = 42.0
+scale = Vector2(2.26927, 2.27231)
+text = "0"
+label_settings = SubResource("LabelSettings_wejw1")
+horizontal_alignment = 1
+
+[node name="Player 2 Score" type="Label" parent="."]
+offset_left = 758.0
+offset_top = -9.0
+offset_right = 788.0
+offset_bottom = 36.0
+scale = Vector2(2.26927, 2.27231)
+text = "0"
+label_settings = SubResource("LabelSettings_wejw1")
+horizontal_alignment = 1
 
 [node name="Separator3" type="Line2D" parent="."]
 modulate = Color(0, 0.32549, 0.443137, 1)
@@ -82,14 +92,24 @@ points = PackedVector2Array(57, 90, 188, 90, 331, 142, 399, 294, 341, 453, 192, 
 closed = true
 gradient = SubResource("Gradient_2qe13")
 
-[node name="Colliders" type="StaticBody2D" parent="."]
+[node name="Separator" type="Line2D" parent="."]
+modulate = Color(0, 0.32549, 0.443137, 1)
+self_modulate = Color(0.47451, 1, 1, 1)
+material = SubResource("CanvasItemMaterial_2fu26")
+points = PackedVector2Array(559, -12, 559, 283.432, 559, 659)
+gradient = SubResource("Gradient_2qe13")
+
+[node name="Left Collider" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_p3cjx")
 
-[node name="LeftCollider" type="CollisionShape2D" parent="Colliders"]
+[node name="LeftCollider" type="CollisionShape2D" parent="Left Collider"]
 position = Vector2(-37.5, 323.5)
 shape = SubResource("RectangleShape2D_1hvj2")
 
-[node name="RightCollider" type="CollisionShape2D" parent="Colliders"]
+[node name="Right Collider" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_p3cjx")
+
+[node name="RightCollider" type="CollisionShape2D" parent="Right Collider"]
 position = Vector2(1136, 321.75)
 shape = SubResource("RectangleShape2D_1hvj2")
 
@@ -130,7 +150,3 @@ offset_bottom = 119.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player2"]
 position = Vector2(1087.5, 62.5)
 shape = SubResource("RectangleShape2D_u7dan")
-
-[node name="Path2D" type="Path2D" parent="."]
-position = Vector2(0, -5)
-curve = SubResource("Curve2D_cm2cc")

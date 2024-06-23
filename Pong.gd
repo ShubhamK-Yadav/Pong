@@ -2,8 +2,12 @@ extends Node2D
 
 var ball = preload("res://ball/ball.tscn")
 var instance = ball.instantiate()
+@onready var player_one_score_label = $"Player 1 Score"
+@onready var player_two_score_label = $"Player 2 Score"
 
 func _physics_process(delta):
+	update_score()
+	
 	if !(instance in get_children()):
 		print("Adding instance")
 		instance.position = Vector2(0, 137)
@@ -16,3 +20,7 @@ func _physics_process(delta):
 func out_of_bounds():
 	remove_child(instance)
 	instance.out_of_bounds = false
+	
+func update_score():
+	player_one_score_label.text = str(instance.player_one_score)
+	player_two_score_label.text = str(instance.player_two_score)	

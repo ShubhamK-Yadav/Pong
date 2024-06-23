@@ -1,1 +1,7 @@
 res://Pong.tscn
+res://ball/ball.tscn
+res://ball/Ball.gd
+res://Player1Score.gd
+res://Player2Score.gd
+res://Pong.gd
+res://Player 2 Score.gd
